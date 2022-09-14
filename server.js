@@ -6,7 +6,7 @@ const morgan = require("morgan");
 const { default: fetch } = require("node-fetch");
 const jwt = require("jsonwebtoken");
 
-const PORT = 9000;
+// const PORT = 9000;
 const app = express();
 
 app.use(cors());
@@ -70,6 +70,6 @@ app.post("/validate-meeting/:meetingId", (req, res) => {
 });
 
 //
-app.listen(PORT, () => {
-  console.log(`API server listening at http://localhost:${PORT}`);
+app.listen(process.env.PORT, () => {
+  console.log(`API server listening at http://localhost:${process.env.PORT}`);
 });
